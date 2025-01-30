@@ -22,7 +22,6 @@ import {
 import HeaderBar from '../components/HeaderBar';
 import CustomIcon from '../components/CustomIcon';
 import CoffeeCard from '../components/CoffeeCard';
-import {SCREENS} from '../constants/Screens';
 
 const getCategoriesFromData = data => {
   let temp = {};
@@ -62,7 +61,6 @@ const HomeScreen = ({navigation}) => {
     getCoffeeList(categoryIndex.category, CoffeeList),
   );
 
-  // console.log('Category=', categories);
   const ListRef = useRef();
   const tableBarHeight = useBottomTabBarHeight();
   const searchCoffee = search => {
@@ -205,7 +203,11 @@ const HomeScreen = ({navigation}) => {
             return (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('Details');
+                  navigation.push('Details', {
+                    index: item.index,
+                    id: item.id,
+                    type: item.type,
+                  });
                 }}>
                 <CoffeeCard
                   id={item.id}
@@ -236,7 +238,14 @@ const HomeScreen = ({navigation}) => {
           keyExtractor={item => item.id}
           renderItem={({item}) => {
             return (
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.push('Details', {
+                    index: item.index,
+                    id: item.id,
+                    type: item.type,
+                  });
+                }}>
                 <CoffeeCard
                   id={item.id}
                   index={item.index}
