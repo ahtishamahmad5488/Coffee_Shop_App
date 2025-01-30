@@ -1,4 +1,3 @@
-import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
@@ -17,7 +16,7 @@ const MainNavigator = () => {
         />
         <Stack.Screen
           name="Details"
-          component={SCREENS.BeanDetailScreen}
+          component={SCREENS.DetailsScreen}
           options={{animation: 'slide_from_bottom'}}
         />
         <Stack.Screen
@@ -31,5 +30,3 @@ const MainNavigator = () => {
 };
 
 export default MainNavigator;
-
-const styles = StyleSheet.create({});
