@@ -24,6 +24,11 @@ const MainNavigator = () => {
           component={SCREENS.PaymentScreen}
           options={{animation: 'slide_from_bottom'}}
         />
+        <Stack.Screen
+          name="CartScreen"
+          component={SCREENS.CartScreen}
+          options={{animation: 'slide_from_bottom'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
