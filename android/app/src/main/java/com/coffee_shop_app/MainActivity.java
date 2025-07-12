@@ -2,6 +2,7 @@ package com.coffee_shop_app;
 
 // Add new bundle just behind
 import android.os.Bundle;
+import org.devio.rn.splashscreen.SplashScreen; // here
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
@@ -21,6 +22,7 @@ public class MainActivity extends ReactActivity {
   // Just For Android
    @Override
   protected void onCreate(Bundle savedInstanceState) {
+     SplashScreen.show(this);  // here
     super.onCreate(null);
   }
   /**
